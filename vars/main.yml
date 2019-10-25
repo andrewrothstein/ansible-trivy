@@ -1,0 +1,7 @@
+---
+# vars file for trivy
+trivy_install_dir: '{{ trivy_parent_install_dir }}/trivy-{{ trivy_ver }}'
+trivy_platform: '{{ trivy_os }}-{{ trivy_arch }}'
+trivy_archive: 'trivy_{{ trivy_ver }}_{{ trivy_platform }}.{{ trivy_archive_type }}'
+trivy_url: '{{ trivy_mirror }}/v{{ trivy_ver }}/{{ trivy_archive }}'
+trivy_checksum: '{{ trivy_checksums[trivy_ver][trivy_platform] }}'
