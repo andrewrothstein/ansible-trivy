@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: Andrew Rothstein
-  description: installs aquaseecs trivy
+  description: installs trivy by Aqua Security
   company: BlackRock Financial Management
   license:
     - MIT
