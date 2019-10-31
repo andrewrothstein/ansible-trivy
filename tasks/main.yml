@@ -54,3 +54,8 @@
     src: '{{ trivy_install_dir }}/trivy'
     dest: '{{ trivy_parent_install_dir }}/bin/trivy'
     state: link
+- name: refresh trivy db
+  when: trivy_refresh | bool
+  become: '{{ trivy_refresh_become }}'
+  become_user: '{{ trivy_refresh_become_user }}'
+  command: '{{ trivy_install_dir }}/trivy --refresh'

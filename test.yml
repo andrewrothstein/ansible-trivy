@@ -2,3 +2,4 @@
 - hosts: all
   roles:
   - role: '{{ playbook_dir }}'
+    trivy_refresh: False
