@@ -1,6 +1,6 @@
 ---
 # defaults file for trivy
-trivy_ver: '0.1.7'
+trivy_ver: '0.2.1'
 trivy_mirror: https://github.com/aquasecurity/trivy/releases/download
 trivy_os: Linux
 trivy_arch: 64bit
@@ -29,3 +29,35 @@ trivy_checksums:
     macOS-32bit: sha256:9eeb8ef8cef1e8f06745de5a0deee29daa33b8b7bda0d18e7594fbd75f451a99
     OpenBSD-64bit: sha256:0766c4d6514f579ca26bffd4c924efc9c8c58578e316e59bc942f32199ce2517
     FreeBSD-64bit: sha256:476a95a6b4f7e4a10b5768a9d907c8a18f282f1dbe724a83433ddc258aa2eab4
+  # https://github.com/aquasecurity/trivy/releases/download/v0.2.0/trivy_0.2.0_checksums.txt
+  '0.2.0':
+    FreeBSD-32bit: sha256:fefcbbaa75be53c423d91671941a44bbc60d3a6994201d20d19baa7426c8a940
+    OpenBSD-32bit: sha256:bba5baec3aa70b2270d13441d870ef353cf399dd70e2ae9cf720096f71fac2f3
+    Linux-32bit: sha256:6bc6d66a45b5959f77e783568eb5ec17f1d088fa1861a8ef2cdc4e95e6fce0e4
+    OpenBSD-ARM: sha256:5c89ee33d409dda91b490c6e913b8c6f15ba74993085d8bbc935cadbdc97f75b
+    Linux-64bit: sha256:4d03b00279a3ee86f56f6869907b6ebd1d9ad7e575fec155e4447305aea163a6
+    FreeBSD-ARM: sha256:fa310e8c17122765284a45e5747481b3a51586affbe91b43868f6b93dd749b5d
+    Linux-ARM: sha256:e29c5beff67e638f00e4dcd535a5c122e51c668297205dc7d2ea1f2587bb4a5b
+    Linux-ARM64: sha256:0866d13bc029e746c4e86e08d0d5014a25cac685172b929fe7580f6ee82957c1
+    Windows-32bit: sha256:0b50500d1257ad4f5e6d050e66cb497dd8c8d3be5e173f611a97f143409d179c
+    Windows-64bit: sha256:cf0659d0222f91d45eddacb2897112d06da34fde53938e6e23905be0ece9309c
+    macOS-64bit: sha256:f766cd50bd41110cfed707c1d9cd5be3f7195b273c57bbcab4e716011999ef1d
+    macOS-32bit: sha256:5bde95a1b39316089920e13424974e09d8dae77ae5f21cca777199e819ea7e22
+    OpenBSD-64bit: sha256:159d27fffcc90faa841003506480c7e72424b53d5af23d01580384466aaf6815
+    FreeBSD-64bit: sha256:52dedcb23081da42c0914e018a69542fb11b970ef0697f1ca8fb230dd6808889
+  # https://github.com/aquasecurity/trivy/releases/download/v0.2.1/trivy_0.2.1_checksums.txt
+  '0.2.1':
+    FreeBSD-32bit: sha256:1d5f24ae38d46c457005848f261204ea4ac0a205f028ce4a30c3c21c5c44c9c7
+    OpenBSD-32bit: sha256:470986e550f65fbe01a4bceebc743c35f3e23d9808833e2956b6f3bdba142f38
+    Linux-32bit: sha256:f4ac48e7ca8c720e064efef4c9a36c598cbf7b339f918e5b2c812ec1732fe734
+    OpenBSD-ARM: sha256:bf4b9868bd8bbc5af6759a950e4dcfb983bf58f60b1257c891e48717c8a8d52a
+    Linux-64bit: sha256:224c25925aef858b8824f75e939f667d36ca57d64813702fa2e90437db9f51d8
+    FreeBSD-ARM: sha256:3e0219986884ca42da681f352d5f14d4cb9f1e07f39f89e2423d0c3b1bc29a6a
+    Linux-ARM: sha256:d85201f3c4c82d384cf4c7690d6d7f0927f21553325761d345e72beab522c844
+    Linux-ARM64: sha256:b180e6a153d3c392cb78cd71a305fb4c7a8ac69c348c9554e34473a832e0b074
+    Windows-32bit: sha256:e22e305c4f426422e0c158c043b6dbdceda30c5fb5decbf51ff3ab716fa0ddf9
+    Windows-64bit: sha256:a53c43681cd4b25a7a2ac74d685042de64d0c018a105970d6618be1792eee11c
+    macOS-64bit: sha256:281a94a5755d4951f0ef7beb1129256cf4e4a04f59a59337fb4fe312491474d1
+    macOS-32bit: sha256:48842688a9e42b4d95987536388cfecfa3db7362c3e7614f725be220ad841385
+    OpenBSD-64bit: sha256:3a7a0c0157cb34d07ff4e9a56aaa91f7d04d0a1746f0cf62e77c3dbeb5af0468
+    FreeBSD-64bit: sha256:01da869242b3e043fe6a90f816493010b3a808a14eaac54171f6ee77fd33b9dc

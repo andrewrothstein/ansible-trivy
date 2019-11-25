@@ -46,4 +46,4 @@ dl_ver() {
     dl $ver $checksums FreeBSD 64bit tar.gz
 }
 
-dl_ver ${1:-0.1.7}
+dl_ver ${1:-0.2.1}
