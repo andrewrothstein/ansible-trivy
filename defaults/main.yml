@@ -1,6 +1,6 @@
 ---
 # defaults file for trivy
-trivy_ver: '0.2.1'
+trivy_ver: '0.4.3'
 trivy_mirror: https://github.com/aquasecurity/trivy/releases/download
 trivy_os: Linux
 trivy_arch: 64bit
@@ -61,3 +61,17 @@ trivy_checksums:
     macOS-32bit: sha256:48842688a9e42b4d95987536388cfecfa3db7362c3e7614f725be220ad841385
     OpenBSD-64bit: sha256:3a7a0c0157cb34d07ff4e9a56aaa91f7d04d0a1746f0cf62e77c3dbeb5af0468
     FreeBSD-64bit: sha256:01da869242b3e043fe6a90f816493010b3a808a14eaac54171f6ee77fd33b9dc
+  # https://github.com/aquasecurity/trivy/releases/download/v0.4.3/trivy_0.4.3_checksums.txt
+  '0.4.3':
+    FreeBSD-32bit: sha256:6b24d19dfbda7d53e295e49a8efbee4f692a9042874baf98e5ad1d1f9fe8bf79
+    OpenBSD-32bit: sha256:e58858ea5f055805e12530133640b7c0d6238ae1dd5e62c3f27817718b183dd9
+    Linux-32bit: sha256:9d44f3eaf098d57806fe0c9e29186fa82423fea118b81f05bf8f87b7079d2bcc
+    OpenBSD-ARM: sha256:b7d60f9868228b1c07f8b7e343ee0af56dde88171d53cae741b6da009e31862c
+    Linux-64bit: sha256:612e398e7e06eb1eeae5dc2d1387c21dd5f5a342757b12d82c298df53eb0ab56
+    FreeBSD-ARM: sha256:43fa1ac1fb947dce1f52feb3150223b03b62d7dba0750253a609fe064329f701
+    Linux-ARM: sha256:0703c1216bfea05b906f1684b7d247acdbe03a699954cc844dd7e383a1f007f2
+    Linux-ARM64: sha256:65a1bb6d7ec963903161f1347a2d33c634737f1bfc10c647fcbd2ef0f28a2b8d
+    macOS-64bit: sha256:e2ac0ec29e660d11ea2142a743ea7419e5b6318bc181b0432dd23e4bbf2b8ef0
+    macOS-32bit: sha256:5763a27bd22129cbcd4c52e0e7f261cd072feeb59895468f45f31f0852f085ea
+    OpenBSD-64bit: sha256:c058eb3f2329745be3ee7cfb87c646d10e65a01ce0d2e981f341d73a27e21bc9
+    FreeBSD-64bit: sha256:d7cfe9755239a972ddf9626dd9c6476b941f73d1cb4299ff21b8b3be21cc32ba
