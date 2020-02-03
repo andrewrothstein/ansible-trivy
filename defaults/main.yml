@@ -7,11 +7,6 @@ trivy_arch: 64bit
 trivy_archive_type: tar.gz
 trivy_parent_install_dir: /usr/local
 
-# download the trivy vulnerability library
-trivy_refresh: True
-trivy_refresh_become: False
-trivy_refresh_become_user: root
-
 trivy_checksums:
   # https://github.com/aquasecurity/trivy/releases/download/v0.1.7/trivy_0.1.7_checksums.txt
   '0.1.7':
