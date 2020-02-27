@@ -1,0 +1,14 @@
+---
+# tasks file for rpg-toolchain
+- name: brew install aquasecurity/trivy
+  # include_role: 
+  #   name: andrewrothstein.trivy
+  homebrew:
+    name: aquasecurity/trivy/trivy
+    state: present
+
+- name: brew link aquasecurity/trivy
+  homebrew:
+    name: aquasecurity/trivy/trivy
+    state: linked
+    install_options: force
