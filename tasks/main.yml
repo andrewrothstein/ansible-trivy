@@ -10,15 +10,4 @@
       paths:
         - '{{ role_path }}/vars'
 
-- name: run os-specific installation
-  include_tasks:
-        file: '{{ item }}'
-  with_first_found:
-    - files:
-        - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
-        - '{{ ansible_distribution }}.yml'
-        - '{{ ansible_os_family }}.yml'
-        - 'source.yml'
-      skip: true
-      paths:
-        - '{{ role_path }}/tasks'
+- include_tasks: '{{ trivy_installer | default("tgz") }}.yml'

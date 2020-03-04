@@ -1,3 +1,4 @@
+---
 - name: check for install
   become: yes
   stat:
