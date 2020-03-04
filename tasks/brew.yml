@@ -1,0 +1,11 @@
+---
+# tasks file for rpg-toolchain
+- name: brew install
+  homebrew:
+    name: aquasecurity/trivy/trivy
+    state: present
+
+- name: brew link
+  homebrew:
+    name: aquasecurity/trivy/trivy
+    state: linked

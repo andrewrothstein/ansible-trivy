@@ -1,0 +1,46 @@
+---
+- name: check for install
+  become: yes
+  stat:
+    path: '{{ trivy_install_dir }}'
+  changed_when: False
+  register: trivy_binary
+- when: not trivy_binary.stat.exists
+  block:
+    - name: download archive
+      become: yes
+      become_user: root
+      get_url:
+        url: '{{ trivy_url }}'
+        dest: /tmp/{{ trivy_archive }}
+        checksum: '{{ trivy_checksum }}'
+        mode: 0644
+    - name: mkdir
+      become: yes
+      become_user: root
+      file:
+        path: '{{ trivy_install_dir }}'
+        state: directory
+        mode: 0755
+    - name: unarchive
+      become: yes
+      become_user: root
+      unarchive:
+        remote_src: yes
+        src: /tmp/{{ trivy_archive }}
+        dest: '{{ trivy_install_dir }}'
+        creates: '{{ trivy_install_dir }}/trivy'
+  always:
+    - name: cleanup
+      become: yes
+      become_user: root
+      file:
+        path: /tmp/{{ trivy_archive }}
+        state: absent
+- name: link
+  become: yes
+  become_user: root
+  file:
+    src: '{{ trivy_install_dir }}/trivy'
+    dest: '{{ trivy_parent_install_dir }}/bin/trivy'
+    state: link
