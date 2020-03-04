@@ -9,4 +9,3 @@
   homebrew:
     name: aquasecurity/trivy/trivy
     state: linked
-    install_options: force
