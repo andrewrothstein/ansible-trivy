@@ -1,2 +1,2 @@
 ---
-trivy_installer: tgz
+trivy_installer: brew
