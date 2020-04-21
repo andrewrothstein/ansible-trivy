@@ -30,18 +30,12 @@ dl_ver() {
     printf "  # %s\n" $mirror/$checksums
     printf "  '%s':\n" $ver
 
-    dl $ver $checksums FreeBSD 32bit
-    dl $ver $checksums OpenBSD 32bit
     dl $ver $checksums Linux 32bit
-    dl $ver $checksums OpenBSD ARM
     dl $ver $checksums Linux 64bit
-    dl $ver $checksums FreeBSD ARM
     dl $ver $checksums Linux ARM
     dl $ver $checksums Linux ARM64
     dl $ver $checksums macOS 64bit
     dl $ver $checksums macOS 32bit
-    dl $ver $checksums OpenBSD 64bit
-    dl $ver $checksums FreeBSD 64bit
 }
 
-dl_ver ${1:-0.4.3}
+dl_ver ${1:-0.6.0}
