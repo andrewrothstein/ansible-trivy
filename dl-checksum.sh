@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+set -e
 DIR=~/Downloads
 APP=trivy
 MIRROR=https://github.com/aquasecurity/${APP}/releases/download
@@ -38,4 +39,4 @@ dl_ver() {
     dl $ver $checksums macOS 32bit
 }
 
-dl_ver ${1:-0.10.1}
+dl_ver ${1:-0.10.2}
