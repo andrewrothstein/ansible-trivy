@@ -36,7 +36,6 @@ dl_ver() {
     dl $ver $checksums Linux ARM
     dl $ver $checksums Linux ARM64
     dl $ver $checksums macOS 64bit
-    dl $ver $checksums macOS 32bit
 }
 
-dl_ver ${1:-0.11.0}
+dl_ver ${1:-0.12.0}
