@@ -144,8 +144,8 @@ trivy_checksums:
     macOS-32bit: sha256:0daa920072dd1f4abf24381f557124829b972d28993610d880f7ef6c2a341abc
   # https://github.com/aquasecurity/trivy/releases/download/v0.12.0/trivy_0.12.0_checksums.txt
   '0.12.0':
-    Linux-32bit: sha256:c0cdcb8a3a4d096bedb34ec048cde330362159de2a79eec03ee5c212b4b3b097
-    Linux-64bit: sha256:4003d993d4b6b5673d4ef6e216578e8ac2bf6b439201a8e748a75fc68430c3f5
-    Linux-ARM: sha256:9163fba7ee95ec099c9cd6ed86ec36c560211a0c35deed5fc476984122849c34
-    Linux-ARM64: sha256:dd37d0f0d1248a13756420790a03dc5dfb5bd9b032e44cde66be2bf4e800f1ab
-    macOS-64bit: sha256:3f5ef5ee2a48b53d693c1cea84d86f349e690a0148b19fe15adeea9b0acfb2f3
+    Linux-32bit: sha256:2800d8e00167d3d2d34698e7cceee6a80840cf36efe0dd5b1ffff7db6ac19948
+    Linux-64bit: sha256:a8a3c381512bc76f449ad4c26b2a41b6ee70fdd2c57ac51d07153723a87110b7
+    Linux-ARM: sha256:bd0e8dada68e63989c0fbfc68c5047c277238ea76b1cbe3dd4f52637cbad7de5
+    Linux-ARM64: sha256:ce8644b18470769760da83b7423588de971d9881e1b3ed6ab0b1f03252bcf950
+    macOS-64bit: sha256:8c9e7e4f907b1bc08f270fb215e54acb51614f8c765014ebaf2ae5a8abd3a7a8
