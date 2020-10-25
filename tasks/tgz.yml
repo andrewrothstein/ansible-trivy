@@ -1,46 +1,46 @@
 ---
-- name: check for install
+- name: check for install in {{ trivy_install_dir }}
   become: yes
   stat:
     path: '{{ trivy_install_dir }}'
   changed_when: False
   register: trivy_binary
-- when: not trivy_binary.stat.exists
+- when: not trivy_binary.stat.exists or (trivy_force_download | default(false))
   block:
-    - name: download archive
+    - name: downloading from {{ trivy_url }}
       become: yes
       become_user: root
       get_url:
         url: '{{ trivy_url }}'
-        dest: /tmp/{{ trivy_archive }}
+        dest: '{{ trivy_tmp_archive }}'
         checksum: '{{ trivy_checksum }}'
         mode: 0644
-    - name: mkdir
+    - name: mkdir {{ trivy_install_dir }}
       become: yes
       become_user: root
       file:
         path: '{{ trivy_install_dir }}'
         state: directory
         mode: 0755
-    - name: unarchive
+    - name: unarchiving {{ trivy_tmp_archive }} to {{ trivy_install_dir }}
       become: yes
       become_user: root
       unarchive:
         remote_src: yes
-        src: /tmp/{{ trivy_archive }}
+        src: '{{ trivy_tmp_archive }}'
         dest: '{{ trivy_install_dir }}'
-        creates: '{{ trivy_install_dir }}/trivy'
+        creates: '{{ trivy_install_exe }}'
   always:
-    - name: cleanup
+    - name: cleanup {{ trivy_tmp_archive }}
       become: yes
       become_user: root
       file:
-        path: /tmp/{{ trivy_archive }}
+        path: '{{ trivy_tmp_archive }}'
         state: absent
-- name: link
+- name: linking {{ trivy_install_link }} to {{ trivy_install_exe }}
   become: yes
   become_user: root
   file:
-    src: '{{ trivy_install_dir }}/trivy'
-    dest: '{{ trivy_parent_install_dir }}/bin/trivy'
+    src: '{{ trivy_install_exe }}'
+    dest: '{{ trivy_install_link }}'
     state: link
