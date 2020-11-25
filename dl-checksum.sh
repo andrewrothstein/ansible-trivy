@@ -38,4 +38,4 @@ dl_ver() {
     dl $ver $checksums macOS 64bit
 }
 
-dl_ver ${1:-0.12.0}
+dl_ver ${1:-0.13.0}
