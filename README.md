@@ -1,6 +1,6 @@
 andrewrothstein.trivy
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-trivy.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-trivy)
+![Build Status](https://github.com/andrewrothstein/ansible-trivy/actions/workflows/build.yml/badge.svg)
 
 Installs [trivy](https://github.com/aquasecurity/trivy) by Aqua Security
 
