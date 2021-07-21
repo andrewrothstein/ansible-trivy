@@ -13,7 +13,7 @@ dl()
     local archive_type=${5:-tar.gz}
     local platform=${os}-${arch}
     local file=${APP}_${ver}_${platform}.$archive_type
-
+    printf "    # %s\n" $MIRROR/v${ver}/$file
     printf "    %s: sha256:%s\n" $platform `fgrep $file $DIR/$checksums | awk '{print $1}'`
 }
 
@@ -38,4 +38,4 @@ dl_ver() {
     dl $ver $checksums macOS 64bit
 }
 
-dl_ver ${1:-0.19.1}
+dl_ver ${1:-0.19.2}
