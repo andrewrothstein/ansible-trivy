@@ -24,7 +24,7 @@ dl_ver() {
     local checksums=${APP}_${ver}_checksums.txt
     if [ ! -e $DIR/$checksums ];
     then
-        wget -q -O $DIR/$checksums $mirror/$checksums
+        curl -sSLf -o $DIR/$checksums $mirror/$checksums
     fi
 
 
@@ -36,6 +36,7 @@ dl_ver() {
     dl $ver $checksums Linux ARM
     dl $ver $checksums Linux ARM64
     dl $ver $checksums macOS 64bit
+    dl $ver $checksums macOS ARM64
 }
 
-dl_ver ${1:-0.24.1}
+dl_ver ${1:-0.24.3}
