@@ -1,6 +1,6 @@
 ---
 # defaults file for trivy
-trivy_ver: 0.25.3
+trivy_ver: 0.25.4
 trivy_mirror: https://github.com/aquasecurity/trivy/releases/download
 trivy_os: Linux
 trivy_arch: 64bit
@@ -411,3 +411,17 @@ trivy_checksums:
     macOS-64bit: sha256:1bd674f647bc2267eef0a255bd4841a4f38a3d9821a9726accfa5f08bbe84e90
     # https://github.com/aquasecurity/trivy/releases/download/v0.25.3/trivy_0.25.3_macOS-ARM64.tar.gz
     macOS-ARM64: sha256:91b46bdbd8b32b8fb505ed21d04cc3a33619215242768666a1805d0e67da1e92
+  # https://github.com/aquasecurity/trivy/releases/download/v0.25.4/trivy_0.25.4_checksums.txt
+  '0.25.4':
+    # https://github.com/aquasecurity/trivy/releases/download/v0.25.4/trivy_0.25.4_Linux-32bit.tar.gz
+    Linux-32bit: sha256:4164a9b0b5013a59029ff6c39df3ddda3f6c31cb8379bc7ad58b23a7a0fb5c1e
+    # https://github.com/aquasecurity/trivy/releases/download/v0.25.4/trivy_0.25.4_Linux-64bit.tar.gz
+    Linux-64bit: sha256:163ac63ee2dc89459b8ddf94880a408de95b087031ccd0533ebde5a631ab20f5
+    # https://github.com/aquasecurity/trivy/releases/download/v0.25.4/trivy_0.25.4_Linux-ARM.tar.gz
+    Linux-ARM: sha256:7b9b18441a53864923137325d024980bc684a8d50038f73a505dd20bba113140
+    # https://github.com/aquasecurity/trivy/releases/download/v0.25.4/trivy_0.25.4_Linux-ARM64.tar.gz
+    Linux-ARM64: sha256:a299627305174da677e322ef519835d37aefaca11cae101beccc781b63c2ec91
+    # https://github.com/aquasecurity/trivy/releases/download/v0.25.4/trivy_0.25.4_macOS-64bit.tar.gz
+    macOS-64bit: sha256:dc0639dc3c82a664249c8cb100db738f1c46ac4e423448f431534b9a19481ca2
+    # https://github.com/aquasecurity/trivy/releases/download/v0.25.4/trivy_0.25.4_macOS-ARM64.tar.gz
+    macOS-ARM64: sha256:73a4f992bee5c71b98e3c376b2e951029ab88ed15687e4b802c385df98ddd670
