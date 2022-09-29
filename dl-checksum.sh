@@ -39,5 +39,4 @@ dl_ver() {
     dl $ver $checksums macOS ARM64
 }
 
-dl_ver 0.31.3
-dl_ver ${1:-0.32.0}
+dl_ver ${1:-0.32.1}
