@@ -31,12 +31,12 @@ dl_ver() {
     printf "  # %s\n" $mirror/$checksums
     printf "  '%s':\n" $ver
 
-    dl $ver $checksums Linux 32bit
     dl $ver $checksums Linux 64bit
-    dl $ver $checksums Linux ARM
     dl $ver $checksums Linux ARM64
+    dl $ver $checksums Linux PPC64LE
+    dl $ver $checksums Linux s390x
     dl $ver $checksums macOS 64bit
     dl $ver $checksums macOS ARM64
 }
 
-dl_ver ${1:-0.38.2}
+dl_ver ${1:-0.43.1}
