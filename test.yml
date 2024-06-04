@@ -1,9 +1,13 @@
 ---
-- hosts: all
+- name: Testing andrewrothstein.trivy
+  hosts: all
   roles:
-  - role: '{{ playbook_dir }}'
+    - role: '{{ playbook_dir }}'
   tasks:
-    - command: /usr/local/bin/trivy --version
+    - name: Executing 'trivy --version'
+      ansible.builtin.command: trivy --version
+      changed_when: false
       register: trivy_test_output
-    - debug:
+    - name: Output from 'trivy --version'
+      ansible.builtin.debug:
         msg: '{{ trivy_test_output.stdout }}'

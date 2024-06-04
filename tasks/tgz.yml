@@ -1,46 +1,50 @@
 ---
-- name: check for install in {{ trivy_install_dir }}
+- name: Check for install in {{ trivy_install_dir }}
   become: true
-  stat:
+  ansible.builtin.stat:
     path: '{{ trivy_install_dir }}'
   changed_when: false
   register: trivy_binary
-- when: not trivy_binary.stat.exists or (trivy_force_download | default(false))
+- name: Downloading and installing trivy
+  when: not trivy_binary.stat.exists or (trivy_force_download | default(false))
   block:
-    - name: downloading from {{ trivy_url }}
+    - name: Downloading from {{ trivy_url }}
       become: true
       become_user: root
-      get_url:
+      ansible.builtin.get_url:
         url: '{{ trivy_url }}'
         dest: '{{ trivy_tmp_archive }}'
         checksum: '{{ trivy_checksum }}'
-        mode: 0644
-    - name: mkdir {{ trivy_install_dir }}
+        mode: '644'
+    - name: Mkdir {{ trivy_install_dir }}
       become: true
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ trivy_install_dir }}'
         state: directory
-        mode: 0755
-    - name: unarchiving {{ trivy_tmp_archive }} to {{ trivy_install_dir }}
+        mode: '755'
+    - name: Installing andrewrothstein.unarchivedeps
+      ansible.builtin.include_role:
+        name: andrewrothstein.unarchivedeps
+    - name: Unarchiving {{ trivy_tmp_archive }} to {{ trivy_install_dir }}
       become: true
       become_user: root
-      unarchive:
+      ansible.builtin.unarchive:
         remote_src: true
         src: '{{ trivy_tmp_archive }}'
         dest: '{{ trivy_install_dir }}'
         creates: '{{ trivy_install_exe }}'
   always:
-    - name: cleanup {{ trivy_tmp_archive }}
+    - name: Cleanup {{ trivy_tmp_archive }}
       become: true
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ trivy_tmp_archive }}'
         state: absent
-- name: linking {{ trivy_install_link }} to {{ trivy_install_exe }}
+- name: Linking {{ trivy_install_link }} to {{ trivy_install_exe }}
   become: true
   become_user: root
-  file:
+  ansible.builtin.file:
     src: '{{ trivy_install_exe }}'
     dest: '{{ trivy_install_link }}'
     state: link
