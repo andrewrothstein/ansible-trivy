@@ -1,7 +1,7 @@
 ---
 # vars file for trivy
-trivy_os: '{{ ansible_system }}'
-trivy_arch: '{{ trivy_arch_map[ansible_architecture] }}'
+trivy_os: '{{ ansible_facts["system"] }}'
+trivy_arch: '{{ trivy_arch_map[ansible_facts["architecture"]] }}'
 trivy_install_dir: '{{ trivy_parent_install_dir }}/trivy-{{ trivy_ver }}'
 trivy_platform: '{{ trivy_os }}-{{ trivy_arch }}'
 trivy_archive: trivy_{{ trivy_ver }}_{{ trivy_platform }}.{{ trivy_archive_type | default("tar.gz") }}
